@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <form action="" method="POST" class="form">
+        {{ form.hidden_tag() }}
+        <!-- <input type="text" class='form__el' name="username" id="" placeholder="Create your unique username">
+        <input type="email" class='form__el' name="email" id="" placeholder="Write down your email">
+        <input type="password" class='form__el' name="password" id="" placeholder="Create password">
+        <input type="password" class='form__el' name="password_a" id="" placeholder="Repeat password">
+        <input type="submit" class='form__el' value="Registration"> -->
+        {% for line in form if line.name not in [ 'csrf_token', 'remember'] %}
+            {{ line.label(class='form_label') }} 
+            {% if line.errors %}
+                {{ line(class='form_field_error' )}}
+                {% for e in line.errors %}
+                    {{ e }}
+                {% endfor %}
+            {% else %}
+                {{ line( class= 'form_field') }}
+            {% endif %}
+        {% endfor %}
+        <div class="remember">
+            {{ form.remember( class= 'remember_field') }}{{ form.remember.label(class='form_label') }}
+        </div>
+        <input type="submit" class="form__submit" value="Подтвердить">
+        <div class="another">
+            <div class="form__context">Еще нет аккаунта?</div>
+            <a class='form__button' href="{{ url_for('logreg.reg')  }}">Зарегистрироваться </a>
+        </div>
+        
+    </form>
+{% endblock %}

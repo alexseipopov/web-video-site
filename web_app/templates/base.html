@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/logreg.css">
+</head>
+<body>
+    <header class="header">
+        <div class="_container">
+            <div class="header__content">
+                <div class="logo">
+                    <div class="logo__img"><img src="../static/image/logo.png" alt=""></div>
+                    <div class="logo__text"> -- место для логотипа</div>
+                </div>
+                <div class="navigation">
+                    <nav class="nav">
+                        <a href="" class="nav__link">nav_1</a>
+                        <a href="" class="nav__link">nav_2</a>
+                        <a href="" class="nav__link">nav_3</a>
+                    </nav>
+                </div>
+                <div class="header__profile">
+                    {%if current_user.name %}
+                    <a href="{{ url_for('logreg.login') }}" class="link_profile">{{current_user.name}}</a>
+                    {%else%}
+                    <a href="{{ url_for('logreg.login') }}" class="link_profile">Личный кабинет</a>
+                    {%endif%}
+                </div>
+            </div>
+            
+        </div>
+    </header>
+    <hr class="hr">
+    <main class="main">
+        <div class="_container">
+            {% block main %}
+            {% endblock %}
+        </div>
+    </main>
+    <hr class="hr">
+    <footer class="footer">
+        <div class="_container">
+            <div class="footer__content">
+                <div class="footer_arr">@ All Rights Reserved</div>
+                <div class="footer__about">
+                    <div class="footer__about-text">Сайт принадлежит нам</div>
+                    <div class="footer__about-email">
+                        <a href="mailto:popov2895@gmail.com">Связаться с нами</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
