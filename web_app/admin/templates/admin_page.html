@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="admin__clients">
+        {%for user in clients%}
+        <div class="clients_line">
+            <div class="clients_username">
+                {{user['username']}}
+            </div>
+            <div class="clients_fio">
+                {{user['FIO']}}
+            </div>
+            <div class="clients_email">
+                {{user['email']}}
+            </div>
+            <div class="clients_phone">
+                {{user['phone']}}
+            </div>
+            <div class="clients_verification">
+                {{user['checked']}}
+            </div>
+        </div>
+        
+        {%endfor%}
+    </div>
+{% endblock %}

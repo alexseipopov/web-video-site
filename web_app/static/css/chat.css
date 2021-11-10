@@ -1,0 +1,20 @@
+.chat__window{
+    height: 500px;
+    overflow: scroll;
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.chat__window::-webkit-scrollbar{
+    width: 0;
+}
+.self{
+    text-align: left;
+    display: flex;
+    margin: 10px 0;
+
+}
+.su{
+    width: 150px;
+    background-color: coral;
+}

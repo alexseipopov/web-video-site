@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Literata&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="../static/css/logreg.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/chat.css">
+    <link rel="stylesheet" href="../static/css/flash.css">
+    <link rel="stylesheet" href="../static/css/admin.css">
 </head>
 <body>
     <header class="header">
         <div class="_container">
             <div class="header__content">
-                <div class="logo">
-                    <div class="logo__img"><img src="../static/image/logo.png" alt=""></div>
-                    <div class="logo__text"> -- место для логотипа</div>
+                <div class="header__profile">
+                    {%if current_user.username %}
+                    <a href="{{ url_for('logreg.index') }}" class="link_profile">{{current_user.username}}</a>
+                    {%else%}
+                    <a href="{{ url_for('logreg.index') }}" class="link_profile">Личный кабинет</a>
+                    {%endif%}
                 </div>
                 <div class="navigation">
                     <nav class="nav">
-                        <a href="" class="nav__link">nav_1</a>
-                        <a href="" class="nav__link">nav_2</a>
-                        <a href="" class="nav__link">nav_3</a>
+                        <a href="" class="nav__link">Обучение</a>
+                        <a href="" class="nav__link">Супервизии</a>
+                        <a href="" class="nav__link">Блог</a>
                     </nav>
-                </div>
-                <div class="header__profile">
-                    {%if current_user.name %}
-                    <a href="{{ url_for('logreg.login') }}" class="link_profile">{{current_user.name}}</a>
-                    {%else%}
-                    <a href="{{ url_for('logreg.login') }}" class="link_profile">Личный кабинет</a>
-                    {%endif%}
                 </div>
             </div>
             
@@ -55,5 +58,7 @@
             </div>
         </div>
     </footer>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='js/index.js')}}"></script> -->
 </body>
 </html>

@@ -1,0 +1,4 @@
+.clients_line{
+    display: flex;
+    justify-content: space-evenly;
+}

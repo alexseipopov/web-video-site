@@ -2,8 +2,35 @@
 {% block main %}
     
     <div class="main__content">
-        <div class="main__setup"><img src="../static/image/gear.png" alt=""></div>
-        <div class="main__text">Сайт в текущий момент в разработке</div>
+        <div class="main__header">
+            <div class="mh__content">
+                <div class="mh__title"><h1>Найти супервизора или присоединиться<br> к группе</h1></div>
+                <div class="mh_subtitle">Big company announcement or simple sub-header talking two or more lines</div>
+                <div class="mh_button"><a href="#" class="btn mh__btn">Button</a></div>
+            </div>
+            <div class="mh__image"><img src="{{url_for('static', filename='image/cover.jpg')}}" alt="Picture" class="mh__img"></div>
+        </div>
+
+        <div class="main__supervisors">
+            <div class="main__person">
+                <div class="mp_image"><img src="{{url_for('static', filename='image/logo.png')}}" alt="" class="mp_img"></div>
+                <div class="mp__FIO"><h2>Василий Иванович Теркин</h2></div>
+                <div class="mp__about">Заслуженный психолог психололенда</div>
+            </div>
+            <div class="main__person">
+                <div class="mp_image"><img src="{{url_for('static', filename='image/logo.png')}}" alt="" class="mp_img"></div>
+                <div class="mp__FIO"><h2>Василий Иванович Теркин</h2></div>
+                <div class="mp__about">Заслуженный психолог психололенда</div>
+            </div>
+            <div class="main__person">
+                <div class="mp_image"><img src="{{url_for('static', filename='image/logo.png')}}" alt="" class="mp_img"></div>
+                <div class="mp__FIO"><h2>Василий Иванович Теркин</h2></div>
+                <div class="mp__about">Заслуженный психолог психололенда</div>
+            </div>
+        </div>
+
     </div>
+
+
     
 {% endblock %}
