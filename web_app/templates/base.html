@@ -20,8 +20,8 @@
         <div class="_container">
             <div class="header__content">
                 <div class="header__profile">
-                    {%if current_user.username %}
-                    <a href="{{ url_for('logreg.index') }}" class="link_profile">{{current_user.username}}</a>
+                    {%if current_user.email %}
+                    <a href="{{ url_for('logreg.logout') }}" class="link_profile">Выйти</a>
                     {%else%}
                     <a href="{{ url_for('logreg.index') }}" class="link_profile">Личный кабинет</a>
                     {%endif%}

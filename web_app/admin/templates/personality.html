@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="admin__clients">
+        
+        <div class="p_line">
+            
+            <div class="p_username">
+                <div class="p_title">Юзернейм пользователя</div>
+                <div class="p_content">{{about['username']}}</div> 
+            </div>
+            <div class="p_fio">
+                <div class="p_title">ФИО пользователя</div>
+                <div class="p_content">{{about['last_name']}} {{about['first_name']}} {{about['fat']}}</div>
+               
+            </div>
+            <div class="p_email">
+                <div class="p_title">Email пользователя</div>
+                <div class="p_content">{{client['email']}}</div>
+                
+            </div>
+            <div class="p_phone">
+                <div class="p_title">Телефон пользователя</div>
+                <div class="p_content">{{client['phone']}}</div>
+                
+            </div>
+            
+            <div class="p_sertificate">
+                <div class="p_title">Сертификаты:</div>
+                {%for file in files%}
+                <a target="_blank" href="{{url_for('admin.dwn',hash=client['uniqe_hash'], file=file)}}" class="p_sert">{{ file }}</a>
+                {%endfor%}
+
+                
+            </div>
+            <div class="p_form_confirm">
+                {%if about['checked']%}
+                <a class="reg_d p_btn" href="{{url_for('admin.deconfirm', hash=client['uniqe_hash'])}}">Отклонить</a>
+                {%else%}
+                <a class="reg_a p_btn" href="{{url_for('admin.confirm', hash=client['uniqe_hash'])}}">Подтвердить</a>
+                {%endif%}
+                
+            </div>
+        </div>
+        
+        
+    </div>
+{% endblock %}

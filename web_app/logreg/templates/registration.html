@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="registration">
+        <div class="registration_title">Регистрация</div>
+        <div class="registration__form">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class='flash_error'>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+            <form action="" class="reg_form" method="POST">
+                {{ form.hidden_tag() }}
+                {% for line in form if line.name not in ['csrf_token']%}
+                    {{line.label()}}
+                    {% if line.errors %}
+                        {{ line(class='registration__field fail' )}}
+                        {% for e in line.errors %}
+                            {{ e }}
+                        {% endfor %}
+                    {% else %}
+                        {{line(class='registration__field')}}
+                    {% endif %}
+                    
+                {% endfor %}
+                <input type="submit" class="registration__button-btn" value="Подтвердить"></input>
+                
+            </form> 
+        </div>
+    </div>
+{% endblock %}

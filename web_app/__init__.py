@@ -1,8 +1,9 @@
 from flask import Flask
 from flask_login import LoginManager
-from flask_socketio import SocketIO
+# from flask_mail import Mail
+import os
 
-
+directory = os.path.dirname(os.path.abspath(__file__))
 
 app = Flask(__name__)
 
@@ -12,7 +13,18 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 
 manager = LoginManager(app)
+# mail = Mail(app)
 # sio = SocketIO(app)
+
+# app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+# app.config['MAIL_PORT'] = 465
+# app.config['MAIL_USE_TLS'] = True
+# app.config['MAIL_USE_SSL'] = True
+# app.config['MAIL_USERNAME'] = 'popov2895@gmail.com'  # введите свой адрес электронной почты здесь
+# app.config['MAIL_DEFAULT_SENDER'] = 'popov2895@gmail.com'  # и здесь
+# app.config['MAIL_PASSWORD'] = 'Svistunov1995'
+
+
 
 from .main import main as m
 app.register_blueprint(m)

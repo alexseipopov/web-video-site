@@ -2,13 +2,32 @@
 
 {% block main %}
     <div class="admin__clients">
-        {%for user in clients%}
-        <div class="clients_line">
-            <div class="clients_username">
-                {{user['username']}}
+        Клиентов: {{cc}}
+        Супервизоров: {{cs}}
+        <div class="admin__titleline">
+            <div class="clients_id">
+                id
+            </div>
+            <div class="clients_email">
+                Почта
+            </div>
+            <div class="clients_phone">
+                Телефон
             </div>
             <div class="clients_fio">
-                {{user['FIO']}}
+                ФИО
+            </div>
+            <div class="clients_status">
+                Статус
+            </div>
+            <div class="clients_role">
+                Роль
+            </div>
+        </div>
+        {%for user in clients%}
+        <div class="clients_line">
+            <div class="clients_id">
+                <a class="clients_link" href="{{url_for('admin.personality', hash=user['uniqe_hash'])}}">{{user['id']}}</a>
             </div>
             <div class="clients_email">
                 {{user['email']}}
@@ -16,8 +35,24 @@
             <div class="clients_phone">
                 {{user['phone']}}
             </div>
-            <div class="clients_verification">
-                {{user['checked']}}
+            <div class="clients_fio">
+                {{user['last_name']}} {{user['first_name']}} {{user['fat']}}
+            </div>
+            <div class="clients_status">
+                {%if user['checked']%}
+                    <p class="clients_allow">Пройден</p> 
+                {%else%}
+                    <p class="clients_deny">Не пройден</p> 
+                {%endif%}
+                
+            </div>
+            <div class="clients_role">
+                {%if user['role']%}
+                <p class="clients__supervisor">Супервизор</p>
+                {%else%}
+                <p class="clients__client">Клиент</p>
+                {%endif%}
+                
             </div>
         </div>
         
