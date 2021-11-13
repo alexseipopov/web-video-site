@@ -5,10 +5,11 @@ from ...database import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, current_user
 
-@pp_client.route('/<int:id>')
+@pp_client.route('/id<int:id>')
 @login_required
 def index(id):
-    if current_user.id == id:
+    if current_user.id != id:
         pass
+    return render_template('pp_client.html')
         
 

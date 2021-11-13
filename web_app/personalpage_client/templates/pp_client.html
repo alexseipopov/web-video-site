@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block main %}
+    <div class="pp_client__main">
+        <div class="pp_client__personal">
+            <div class="pp_client__info">
+                <p>Личная информация</p>
+                <div class="pp_client__info-row">
+                    <div class="pp_client__info-title">ФИО:</div>
+                    <div class="pp_client__info-value">Здесь будет инфа из БД</div>
+                </div>
+                <div class="pp_client__info-row">
+                    <div class="pp_client__info-title">Телефон:</div>
+                    <div class="pp_client__info-value">Здесь будет инфа из БД</div>
+                </div>
+                <div class="pp_client__info-row">
+                    <div class="pp_client__info-title">Почта:</div>
+                    <div class="pp_client__info-value">Здесь будет инфа из БД</div>
+                </div>
+            </div>
+            <div class="pp_client__avatar">
+                <div class="pp_client__avatar-img">
+                    <img src="{{url_for('static', filename='image/logo.png')}}" alt="Avatar">
+                </div>
+                <div class="pp_client__avatar-btn">
+                    <a href="" class="pp_client__avatar-link">Это будет кнопка загрузки аватара</a>
+                </div>
+            </div>
+        </div>
+        <div class="pp_client__edu">
+            <p>Документы об образовании:</p>
+            <div class="pp_client__sertificate--btn">
+                <a href="" class="pp_client__sertificate-link">Кнопка загрузки документа</a>
+            </div>
+        </div>
+        <div class="pp_client__about">
+            <p>Информация о себе:</p>
+            <div class="pp_client__area">
+                В этом блоке будет распологаться информация о себе. Храниться она будет в басзе данных и может быть изменена в любой момент самим пользователем
+            </div>
+            <div class="pp_client__about-btn">
+                <div class="pp_client__about-link">Кнопка для изменения информации</div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,67 @@
+.pp_client__personal{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+.pp_client__info{
+    width: 50%;
+}
+.pp_client__avatar{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pp_client__info-row{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+}
+.pp_client__info-title{
+    width: 150px;
+}
+.pp_client__avatar-img img{
+    height: 200px;
+}
+.pp_client__avatar-btn{
+    margin-top: 20px;
+}
+.pp_client__avatar-link{
+    border: 1px solid #000;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+    padding: 5px 20px;
+}
+.pp_client__sertificate--btn{
+    margin-top: 20px;
+}
+.pp_client__sertificate-link{
+    border: 1px solid #000;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+    padding: 5px 20px;
+}
+.pp_client__about{
+    margin: 20px 0;
+    width: 50%;
+    
+}
+.pp_client__area{
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: inset 1px 1px 5px 2px rgb(144, 144, 144);
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.527);
+}
+.pp_client__about-btn{
+    margin: 10px 0;
+}
+.pp_client__about-link{
+    border: 1px solid #000;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+    padding: 5px 20px;
+}
